@@ -26,6 +26,8 @@ alias glog="git log --graph --oneline --all"
 
 alias pjson='python -mjson.tool'
 
+#cd() { builtin cd "$@" && ls -l; }
+
 ips(){
   ifconfig | grep 'inet ' | cut -d':' -f2 | cut -d' ' -f1 | tail -n 1
 
