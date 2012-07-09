@@ -1,4 +1,4 @@
-export PS1='\[\033[01;32m\]\W  \[\033[01;31m\]$(echo $(which_ruby)) \[\033[01;33m\]$(echo $(branch)) \[\033[00;37m\]$\[\033[00m\] '
+export PS1='\[\033[01;32m\]\W \[\033[01;31m\]$(echo $(which_ruby)) \[\033[01;33m\]$(echo $(branch_prompt)) \[\033[00;37m\]$\[\033[00m\] '
 
 HISTCONTROL=ignoredups:ignorespace
 HISTSIZE=1000
@@ -41,6 +41,14 @@ ips(){
 
 branch(){
   test -d .git && git symbolic-ref HEAD 2> /dev/null | cut -d/ -f3,4
+}
+
+parse_git_dirty() {
+  [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "*" 
+}
+
+branch_prompt(){
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
 }
 
 push() {
