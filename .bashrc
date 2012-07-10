@@ -51,6 +51,10 @@ branch_prompt(){
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
 }
 
+which_ruby(){
+  rvm-prompt v g
+}
+
 push() {
   git push origin $(branch)
 }
@@ -105,10 +109,6 @@ tatt(){
 
 tls(){
   tmux ls
-}
-
-which_ruby(){
-  rvm-prompt v g
 }
 
 if [ -f ~/.bash_aliases ]; then
