@@ -1,4 +1,4 @@
-export PS1='\[\033[01;32m\]\W \[\033[01;31m\]$(echo $(which_ruby)) \[\033[01;33m\]$(echo $(branch_prompt)) \[\033[00;37m\]$\[\033[00m\] '
+export PS1='\[\033[01;32m\]\W \[\033[01;31m\]\[\033[01;33m\]$(echo $(branch_prompt)) \[\033[00;37m\]$\[\033[00m\] '
 
 HISTCONTROL=ignoredups:ignorespace
 HISTSIZE=1000
@@ -7,6 +7,7 @@ shopt -s histappend
 
 alias grep='grep --color'
 alias ls='ls --color'
+alias sl='ls'
 alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
@@ -14,14 +15,32 @@ alias less='less -R'
 alias du='du -h'
 alias df='df -h'
 alias free='free -m'
+alias c='clear'
+alias q='exit'
+alias :q='exit'
+alias irc='weechat-curses'
+alias h='history'
+alias v='vim'
+alias tmux='TERM=xterm-256color tmux'
+
+alias rb='ruby'
 alias irb='irb --simple-prompt --readline'
+
 alias rebash='. ~/.bashrc'
 alias vimbash='vim ~/.bashrc'
 alias bashrc='${EDITOR} ~/.bashrc; rebash'
+
+alias g='git'
+alias ga='git add'
+alias gb='git branch'
+alias gp='git push'
+alias gl='git pull'
 alias gst="git status"
 alias gci="git commit"
 alias gco="git checkout"
 alias gdiff="git diff"
+alias gd="git diff | vim -R -"
+alias gmu='git fetch origin -v; git fetch upstream -v; git merge upstream/master'
 alias glog="git log --graph --oneline --all"
 
 alias pjson='python -mjson.tool'
@@ -44,7 +63,7 @@ branch(){
 }
 
 parse_git_dirty() {
-  [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "*" 
+  [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo " ✗" 
 }
 
 branch_prompt(){
@@ -109,6 +128,10 @@ tatt(){
 
 tls(){
   tmux ls
+}
+
+function rh {
+  history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head
 }
 
 if [ -f ~/.bash_aliases ]; then
