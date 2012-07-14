@@ -27,7 +27,6 @@ alias rb='ruby'
 alias irb='irb --simple-prompt --readline'
 
 alias rebash='. ~/.bashrc'
-alias vimbash='vim ~/.bashrc'
 alias bashrc='${EDITOR} ~/.bashrc; rebash'
 
 alias g='git'
