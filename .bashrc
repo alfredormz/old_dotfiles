@@ -152,6 +152,7 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+export CDPATH=.:~:~/dev:~/Dropbox:~/Ubuntu\ One
 export EDITOR=vim
 export JAVA_HOME=/opt/jdk1.7.0_04
 export PATH=/usr/local/pgsql/bin:$PATH
