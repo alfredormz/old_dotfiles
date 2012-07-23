@@ -2,6 +2,7 @@
 #export PS1='\[\033[01;32m\]\W \[\033[01;31m\]$(echo $(which_ruby)) \[\033[01;33m\]$(echo $(branch)) \[\033[00;37m\]$\[\033[00m\] '
 export PS1='\[\033[01;32m\]\W \[\033[01;33m\]$(branch_prompt)\[\033[00;37m\]$\[\033[00m\] '
 
+export HISTIGNORE="&:ls:ls *:exit"
 HISTCONTROL=ignoredups:ignorespace
 HISTSIZE=1000
 HISTFILESIZE=2000
