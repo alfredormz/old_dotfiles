@@ -1,4 +1,6 @@
-export PS1='\[\033[01;32m\]\W \[\033[01;31m\]\[\033[01;33m\]$(echo $(branch_prompt)) \[\033[00;37m\]$\[\033[00m\] '
+#export PS1='\[\033[01;32m\]\W \[\033[01;31m\]\[\033[01;33m\]$(echo $(branch_prompt)) \[\033[00;37m\]$\[\033[00m\] '
+#export PS1='\[\033[01;32m\]\W \[\033[01;31m\]$(echo $(which_ruby)) \[\033[01;33m\]$(echo $(branch)) \[\033[00;37m\]$\[\033[00m\] '
+export PS1='\[\033[01;32m\]\W \[\033[01;33m\]$(branch_prompt)\[\033[00;37m\]$\[\033[00m\] '
 
 HISTCONTROL=ignoredups:ignorespace
 HISTSIZE=1000
@@ -21,10 +23,11 @@ alias :q='exit'
 alias irc='weechat-curses'
 alias h='history'
 alias v='vim'
-alias tmux='TERM=xterm-256color tmux'
+alias gnome-terminal='gnome-terminal --hide-menubar'
 
 alias rb='ruby'
 alias irb='irb --simple-prompt --readline'
+alias railsc=' pry -r ./config/environment.rb'
 
 alias rebash='. ~/.bashrc'
 alias bashrc='${EDITOR} ~/.bashrc; rebash'
@@ -44,8 +47,6 @@ alias glog="git log --graph --oneline --all"
 
 alias pjson='python -mjson.tool'
 
-#cd() { builtin cd "$@" && ls -l; }
-
 ips(){
   ifconfig | grep 'inet ' | cut -d':' -f2 | cut -d' ' -f1 | tail -n 1
 
@@ -62,7 +63,16 @@ branch(){
 }
 
 parse_git_dirty() {
-  [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo " ✗" 
+  status=$(git status 2> /dev/null | tail -n1)
+  if [[ $status == "" ]]
+  then
+    echo " "
+  else
+    if [[ $status != "nothing to commit (working directory clean)" ]]
+    then
+      echo " ✗ "
+    fi
+  fi
 }
 
 branch_prompt(){
@@ -70,7 +80,12 @@ branch_prompt(){
 }
 
 which_ruby(){
-  rvm-prompt v g
+  rvm-prompt g
+}
+
+git_prompt_info() {
+   ref=$(/usr/bin/git symbolic-ref HEAD 2>/dev/null) || return
+   echo "${ref#refs/heads/}"
 }
 
 push() {
@@ -143,6 +158,7 @@ export PATH=/usr/local/pgsql/bin:$PATH
 export PATH=/opt/mongodb/bin:$PATH
 export PATH=$JAVA_HOME/bin:$PATH
 export PYTHONSTARTUP=$HOME/.pythonrc
+
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
 
 rvm default
