@@ -2,10 +2,10 @@
 #export PS1='\[\033[01;32m\]\W \[\033[01;31m\]$(echo $(which_ruby)) \[\033[01;33m\]$(echo $(branch)) \[\033[00;37m\]$\[\033[00m\] '
 export PS1='\[\033[01;32m\]\W \[\033[01;33m\]$(branch_prompt)\[\033[00;37m\]$\[\033[00m\] '
 
-export HISTIGNORE="&:ls:ls *:exit"
-HISTCONTROL=ignoredups:ignorespace
-HISTSIZE=1000
-HISTFILESIZE=2000
+export HISTIGNORE="&:ls:ls *:exit:cd:cd *"
+export HISTCONTROL=ignoredups:ignorespace
+export HISTSIZE=1000
+export HISTFILESIZE=2000
 shopt -s histappend
 
 alias grep='grep --color'
@@ -38,11 +38,10 @@ alias ga='git add'
 alias gb='git branch'
 alias gp='git push'
 alias gl='git pull'
-alias gst="git status"
+alias gs="git status --short"
+alias gd="git diff"
 alias gci="git commit"
 alias gco="git checkout"
-alias gdiff="git diff"
-alias gd="git diff | vim -R -"
 alias gmu='git fetch origin -v; git fetch upstream -v; git merge upstream/master'
 alias glog="git log --graph --oneline --all"
 
@@ -153,7 +152,7 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-export CDPATH=.:~:~/dev:~/Dropbox:~/Ubuntu\ One
+#export CDPATH=.:~:~/dev:~/Dropbox:~/Ubuntu\ One
 export EDITOR=vim
 export JAVA_HOME=/opt/jdk1.7.0_04
 export PATH=/usr/local/pgsql/bin:$PATH
