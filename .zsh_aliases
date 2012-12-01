@@ -1,0 +1,6 @@
+alias vimzsh="vim ~/.zshrc && source ~/.zshrc"
+alias rezsh="source ~/.zshrc"
+
+alias rm~="find . -name '*~' -print0 | xargs -0 /bin/rm -f"
+
+
