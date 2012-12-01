@@ -1,0 +1,10 @@
+[user]
+	name = Alfredo Ramírez
+	email = alfredormz@gmail.com
+[color]
+	ui = auto
+[alias]
+	st = status --short
+	ci = commit
+	co = checkout
+	b = branch
