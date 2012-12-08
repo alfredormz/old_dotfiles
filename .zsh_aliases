@@ -2,5 +2,6 @@ alias vimzsh="vim ~/.zshrc && source ~/.zshrc"
 alias rezsh="source ~/.zshrc"
 alias irc="weechat-curses"
 alias rm~="find . -name '*~' -print0 | xargs -0 /bin/rm -f"
+alias autotest="watchr test.watchr"
 
 
