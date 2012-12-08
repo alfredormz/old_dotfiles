@@ -10,5 +10,6 @@ if [ -f ~/.zsh_aliases ]; then
 fi
 
 #export TERM=xterm-256color
+export EDITOR=vim
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
