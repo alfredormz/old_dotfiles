@@ -28,7 +28,7 @@ fi
 
 if [ "$(battery)" -lt "100" ]
 then
-  battery_info="${battery_color}[$(battery)%%]%{$reset_color%}"
+  battery_info='${battery_color}[$(battery)%%]%{$reset_color%}'
 fi
 
 local return_code='%(?..%{$fg[red]%}%? ↵%{$reset_color%})'
