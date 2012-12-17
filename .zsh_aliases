@@ -5,4 +5,6 @@ alias rm~="find . -name '*~' -print0 | xargs -0 /bin/rm -f"
 alias autotest="watchr test.watchr"
 alias tmux="tmux -2"
 alias O="cd ~/dev/overol"
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
 
