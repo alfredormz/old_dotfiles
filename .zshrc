@@ -16,5 +16,5 @@ fi
 
 #export TERM=xterm-256color
 export EDITOR=vim
-
+export PATH=/opt/phantom/bin:$PATH
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
