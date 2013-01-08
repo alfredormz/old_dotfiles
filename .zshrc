@@ -5,11 +5,6 @@ ZSH_THEME="robbyrussell"
 
 source $ZSH/oh-my-zsh.sh
 
-autoload -U compinit
-compinit
-
-cdpath=(~ ~/dev/overol)
-
 if [ -f ~/.zsh_aliases ]; then
   source ~/.zsh_aliases
 fi
@@ -21,5 +16,5 @@ fi
 
 #export TERM=xterm-256color
 export EDITOR=vim
-export PATH=/opt/phantom/bin:$PATH
+export PATH=/opt/phantom/bin:/usr/local/pgsql/bin:$PATH
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"

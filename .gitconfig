@@ -1,13 +1,13 @@
 [user]
-	name = Alfredo Ramírez
-	email = alfredormz@gmail.com
+  name = Alfredo Ramírez
+  email = alfredormz@gmail.com
 [color]
-	ui = auto
+  ui = auto
 [alias]
-	st = status --short
-	ci = commit
-	co = checkout
-	b = branch
+  st = status --short
+  ci = commit
+  co = checkout
+  b = branch
   di = diff
   dc = diff --cached
   amend = commit --amend

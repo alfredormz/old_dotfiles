@@ -163,3 +163,5 @@ export PYTHONSTARTUP=$HOME/.pythonrc
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
 
 rvm default
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
