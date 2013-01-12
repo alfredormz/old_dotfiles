@@ -8,3 +8,8 @@ alias O="cd ~/dev/overol"
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 
+alert_helper() {
+  history|tail -n1|sed -e "s/^\s*[0-9]\+\s*//" -e "s/;\s*alert$//"
+}
+
+alias alert='notify-send -i utilities-terminal "$(alert_helper)"'
