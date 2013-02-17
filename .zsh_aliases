@@ -13,3 +13,4 @@ alert_helper() {
 }
 
 alias alert='notify-send -i utilities-terminal "$(alert_helper)"'
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
