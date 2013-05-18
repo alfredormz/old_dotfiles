@@ -3,10 +3,11 @@ alias rezsh="source ~/.zshrc"
 alias irc="weechat-curses"
 alias rm~="find . -name '*~' -print0 | xargs -0 /bin/rm -f"
 alias autotest="watchr test.watchr"
-alias tmux="tmux -2"
+#alias tmux="tmux -2"
 alias O="cd ~/dev/overol"
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
+alias :wq='sudo shutdown -r now'
 
 alert_helper() {
   history|tail -n1|sed -e "s/^\s*[0-9]\+\s*//" -e "s/;\s*alert$//"
