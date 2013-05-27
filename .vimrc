@@ -38,8 +38,8 @@ filetype plugin indent on
 " Colors
 "let g:solarized_termcolors=256
 "set t_Co=16
-set background=dark
-colorscheme solarized
+"set background=dark
+"colorscheme solarized
 
 set nowrap
 set tabstop=2 shiftwidth=2
@@ -49,7 +49,6 @@ set ruler
 set showcmd
 set autoindent
 set showmatch
-set wmh=0
 set viminfo+=!
 set history=500
 set laststatus=2
@@ -72,10 +71,6 @@ set ttimeoutlen=100
 
 set backupdir=~/.vim/_temp
 set directory=~/.vim/_temp
-
-" paste lines from unnamed register and fix indentation
-nmap <leader>p pV`]=
-nmap <leader>P PV`]=
 
 "" Search
 set hlsearch
@@ -113,7 +108,7 @@ nnoremap <silent> <C-p> :CommandT<CR>
 nnoremap <silent> <C-b> :CommandTBuffer<CR>
 let g:CommandTMatchWindowReverse=1
 let g:CommandTMaxHeight=10
-let g:CommandTCancelMap='<ESC>'
+set wildignore+=.git,*.png,*.jpg,*.jpeg,*.log,tmp
 
 "Removes the higlight
 map <C-h> :nohl<CR>
