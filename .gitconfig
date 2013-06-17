@@ -7,6 +7,7 @@
   st = status --short
   ci = commit
   co = checkout
+  cob = checkout -b
   b = branch
   di = diff
   dc = diff --cached
@@ -15,6 +16,7 @@
   ff = merge --ff-only
   pullff = pull --ff-only
   noff = merge --no-ff
+  f = fetch
   fa = fetch --all
   pom = push origin master
   ds = diff --stat=160,120
