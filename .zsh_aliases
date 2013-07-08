@@ -24,3 +24,5 @@ alert_helper() {
 
 alias alert='notify-send -i utilities-terminal "$(alert_helper)"'
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias stfu="pactl set-sink-volume 0 -- -100%"
+alias pumpitup="pactl set-sink-volume 0 -- -100% && pactl set-sink-volume 0 -- +100%"
