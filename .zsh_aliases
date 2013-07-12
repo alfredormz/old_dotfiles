@@ -8,6 +8,8 @@ alias pbpaste='xclip -selection clipboard -o'
 alias :wq='sudo shutdown -r now'
 alias vimrc='vim ~/.vimrc'
 
+alias wrb='ruby -run -e httpd . -p 5000'
+
 #git
 alias gti=git
 alias g=git
