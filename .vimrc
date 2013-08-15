@@ -11,23 +11,34 @@ call vundle#rc()
 " Let Vundle manage Vundle (required)!
 Bundle 'gmarik/vundle'
 
-Bundle 'ervandew/supertab'
+" Languages
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'tpope/vim-rails'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'vim-scripts/ruby-matchit'
+Bundle 'tpope/vim-haml'
+
+" Colors
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'chriskempson/vim-tomorrow-theme'
+Bundle 'jpo/vim-railscasts-theme'
+
+" Other stuff
+Bundle 'ervandew/supertab'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-unimpaired'
-Bundle 'vim-ruby/vim-ruby'
 Bundle 'wincent/Command-T'
 Bundle 'koron/nyancat-vim'
-Bundle 'vim-scripts/ruby-matchit'
 Bundle 'scrooloose/syntastic'
-Bundle 'altercation/vim-colors-solarized'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
+Bundle 'mileszs/ack.vim'
+Bundle 'scrooloose/snipmate-snippets'
+"Bundle 'msanders/snipmate.vim'
 
 set nocompatible
 set encoding=utf-8
@@ -77,6 +88,7 @@ set hlsearch
 set incsearch
 set ignorecase
 set smartcase
+set showmatch
 
 " http://vimcasts.org/e/14
 map <leader>ew :e <C-R>=expand("%:p:h") . "/" <CR>
