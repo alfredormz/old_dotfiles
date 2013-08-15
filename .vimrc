@@ -123,4 +123,15 @@ let g:CommandTMaxHeight=10
 set wildignore+=.git,*.png,*.jpg,*.jpeg,*.log,tmp
 
 "Removes the higlight
-map <C-h> :nohl<CR>
+map <leader><space> :nohl<CR>
+
+"Highlights unwanted spaces
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+
+" Ack
+nnoremap <leader>a :Ack
+
+" snipMate
+let g:snippets_dir="~/.vim/bundle/snipmate-snippets"
+autocmd BufNewFile,BufRead *.erb set filetype=html.eruby
