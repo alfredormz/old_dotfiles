@@ -16,9 +16,9 @@ alias g=git
 alias gf='git fetch'
 alias gl='git l'
 
-#projects
-alias O="cd ~/dev/overol"
-alias K="cd ~/dev/oke"
+#bundle
+alias be="bundle exec"
+alias bi="bundle install"
 
 alert_helper() {
   history|tail -n1|sed -e "s/^\s*[0-9]\+\s*//" -e "s/;\s*alert$//"
