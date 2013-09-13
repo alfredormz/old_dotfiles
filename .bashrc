@@ -68,7 +68,7 @@ parse_git_dirty() {
   then
     echo " "
   else
-    if [[ $status != "nothing to commit (working directory clean)" ]]
+    if [[ $status != "nothing to commit, working directory clean" ]]
     then
       echo " ✗ "
     fi
