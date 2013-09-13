@@ -21,11 +21,6 @@ alias gl='git l'
 alias be="bundle exec"
 alias bi="bundle install"
 
-alert_helper() {
-  history|tail -n1|sed -e "s/^\s*[0-9]\+\s*//" -e "s/;\s*alert$//"
-}
-
-alias alert='notify-send -i utilities-terminal "$(alert_helper)"'
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias stfu="pactl set-sink-volume 0 -- -100%"
 alias pumpitup="pactl set-sink-volume 0 -- -100% && pactl set-sink-volume 0 -- +100%"
