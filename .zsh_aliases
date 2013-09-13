@@ -11,6 +11,7 @@ alias vimrc='vim ~/.vimrc'
 alias wrb='ruby -run -e httpd . -p 5000'
 
 #git
+alias git=hub
 alias gti=git
 alias g=git
 alias gf='git fetch'
