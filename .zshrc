@@ -9,7 +9,6 @@ if [ -f ~/.zsh_aliases ]; then
   source ~/.zsh_aliases
 fi
 
-#privated
 if [ -f ~/Dropbox/zsh_aliases ]; then
   source ~/Dropbox/zsh_aliases
 fi

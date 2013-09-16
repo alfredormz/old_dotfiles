@@ -1,11 +1,10 @@
-#export PS1='\[\033[01;32m\]\W \[\033[01;31m\]\[\033[01;33m\]$(echo $(branch_prompt)) \[\033[00;37m\]$\[\033[00m\] '
-#export PS1='\[\033[01;32m\]\W \[\033[01;31m\]$(echo $(which_ruby)) \[\033[01;33m\]$(echo $(branch)) \[\033[00;37m\]$\[\033[00m\] '
 export PS1='\[\033[01;32m\]\W \[\033[01;33m\]$(branch_prompt)\[\033[00;37m\]$\[\033[00m\] '
 
 export HISTIGNORE="&:ls:ls *:exit:cd:cd *"
 export HISTCONTROL=ignoredups:ignorespace
 export HISTSIZE=1000
 export HISTFILESIZE=2000
+export TERM=xterm-256color
 shopt -s histappend
 
 alias grep='grep --color'
@@ -19,8 +18,6 @@ alias du='du -h'
 alias df='df -h'
 alias free='free -m'
 alias c='clear'
-alias q='exit'
-alias :q='exit'
 alias irc='weechat-curses'
 alias h='history'
 alias v='vim'
@@ -33,7 +30,14 @@ alias railsc=' pry -r ./config/environment.rb'
 alias rebash='. ~/.bashrc'
 alias bashrc='${EDITOR} ~/.bashrc; rebash'
 
-alias g='git'
+alias q='exit'
+alias :q='exit'
+alias :wq='sudo shutdown -r now'
+
+#git
+alias git=hub
+alias gti=git
+alias g=git
 alias ga='git add'
 alias gb='git branch'
 alias gp='git push'
@@ -42,10 +46,14 @@ alias gs="git status --short"
 alias gd="git diff"
 alias gci="git commit"
 alias gco="git checkout"
+alias gf='git fetch'
+alias gl='git l'
 alias gmu='git fetch origin -v; git fetch upstream -v; git merge upstream/master'
 alias glog="git log --graph --oneline --all"
 
 alias pjson='python -mjson.tool'
+
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 
 ips(){
   ifconfig | grep 'inet ' | cut -d':' -f2 | cut -d' ' -f1 | tail -n 1
@@ -96,40 +104,6 @@ pull() {
   git pull origin $(branch)
 }
 
-merge_to() {
-  target=$1
-  branch_to_merge=$(branch)
-  git checkout ${target}
-  git merge --no-ff ${branch_to_merge}
-}
-
-merge_tod() {
-  target=$1
-  branch_to_merge=$(branch)
-  git checkout ${target}
-  git merge --no-ff ${branch_to_merge}
-  git branch -d ${branch_to_merge}
-}
-
-empty_gh() {
-  repository=$1
-  github_user=$(git config github.user)
-  mkdir "$repository"
-  cd "$repository"
-  git init
-  touch README.md
-  git add README.md
-  git commit -m 'First commit'
-  git remote add origin git@github.com:${github_user}/${repository}.git
-}
-
-exists_gh() {
-  repository=$1
-  cd "$repository"
-  github_user=$(git config github.user)
-  git remote add origin git@github.com:${github_user}/${repository}.git
-}
-
 tnew(){
   session=$1
   tmux new-session -s ${session} -d
@@ -152,7 +126,10 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-#export CDPATH=.:~:~/dev:~/Dropbox:~/Ubuntu\ One
+if [ -f ~/Dropbox/zsh_aliases ]; then
+    . ~/Dropbox/zsh_aliases
+fi
+
 export EDITOR=vim
 export JAVA_HOME=/opt/jdk1.7.0_04
 export PATH=/usr/local/pgsql/bin:$PATH
@@ -165,3 +142,4 @@ export PYTHONSTARTUP=$HOME/.pythonrc
 rvm default
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
