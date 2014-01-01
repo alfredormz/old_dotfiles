@@ -117,3 +117,7 @@ map <Left>  :echo "ಠ_ಠ"<cr>
 map <Right> :echo "ಠ_ಠ"<cr>
 map <Up>    :echo "ಠ_ಠ"<cr>
 map <Down>  :echo "ಠ_ಠ"<cr>
+
+highlight ColorColumn ctermbg=magenta
+call matchadd('ColorColumn', '\%81v', 100)
+
