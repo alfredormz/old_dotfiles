@@ -11,34 +11,10 @@ call vundle#rc()
 " Let Vundle manage Vundle (required)!
 Bundle 'gmarik/vundle'
 
-" Languages
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'tpope/vim-rails'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'vim-scripts/ruby-matchit'
-Bundle 'tpope/vim-haml'
-
-" Colors
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'chriskempson/vim-tomorrow-theme'
-Bundle 'jpo/vim-railscasts-theme'
-
 " Other stuff
-Bundle 'ervandew/supertab'
-Bundle 'tomtom/tcomment_vim'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-unimpaired'
 Bundle 'wincent/Command-T'
-Bundle 'koron/nyancat-vim'
-Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
-Bundle 'mileszs/ack.vim'
-Bundle 'scrooloose/snipmate-snippets'
-"Bundle 'msanders/snipmate.vim'
 
 set nocompatible
 set encoding=utf-8
@@ -119,7 +95,7 @@ map <Leader>r :call RenameFile()<cr>
 nnoremap <silent> <C-p> :CommandT<CR>
 nnoremap <silent> <C-b> :CommandTBuffer<CR>
 let g:CommandTMatchWindowReverse=1
-let g:CommandTMaxHeight=10
+"let g:CommandTMaxHeight=10
 set wildignore+=.git,*.png,*.jpg,*.jpeg,*.log,tmp
 
 "Removes the higlight
