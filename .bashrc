@@ -28,6 +28,8 @@ alias rvmp="rvm-prompt"
 alias rebash='. ~/.bashrc'
 alias bashrc='${EDITOR} ~/.bashrc; rebash'
 
+alias tmux='tmux attach || tmux -2'
+
 alias q='exit'
 alias :q='exit'
 alias :wq='sudo shutdown -r now'
