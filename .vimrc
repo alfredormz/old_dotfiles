@@ -23,10 +23,7 @@ syntax on
 filetype plugin indent on
 
 " Colors
-"let g:solarized_termcolors=256
-"set t_Co=16
-"set background=dark
-"colorscheme solarized
+color molokai
 
 set nowrap
 set tabstop=2 shiftwidth=2
@@ -41,7 +38,7 @@ set history=500
 set laststatus=2
 set number
 set gdefault " assume the /g flag on :s substitutions to replace all matches in a line
-
+set clipboard=unnamed
 
 " Allow backgrounding buffers without writing them, and remember marks/undo
 " for backgrounded buffers
