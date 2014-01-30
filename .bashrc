@@ -1,10 +1,7 @@
 export PS1='\[\033[01;32m\]\W \[\033[01;33m\]$(branch_prompt)\[\033[00;37m\]$\[\033[00m\] '
 
-export HISTIGNORE="&:ls:ls *:exit:cd:cd *"
-export HISTCONTROL=ignoredups:ignorespace
 export HISTSIZE=1000
 export HISTFILESIZE=2000
-export TERM=xterm-256color
 shopt -s histappend
 
 alias grep='grep --color'
@@ -26,7 +23,8 @@ alias gnome-terminal='gnome-terminal --hide-menubar'
 alias rb='ruby'
 alias irb='irb --simple-prompt --readline'
 alias railsc=' pry -r ./config/environment.rb'
-
+alias wrb="ruby -run -e httpd . -p 5000"
+alias rvmp="rvm-prompt"
 alias rebash='. ~/.bashrc'
 alias bashrc='${EDITOR} ~/.bashrc; rebash'
 
