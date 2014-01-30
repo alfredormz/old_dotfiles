@@ -92,8 +92,13 @@ map <Leader>r :call RenameFile()<cr>
 nnoremap <silent> <C-p> :CommandT<CR>
 nnoremap <silent> <C-b> :CommandTBuffer<CR>
 let g:CommandTMatchWindowReverse=1
-"let g:CommandTMaxHeight=10
+let g:CommandTMaxHeight=10
 set wildignore+=.git,*.png,*.jpg,*.jpeg,*.log,tmp
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" NERDTree options
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <silent> <Leader>t :NERDTreeToggle<CR>
 
 "Removes the higlight
 map <leader><space> :nohl<CR>
