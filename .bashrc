@@ -36,36 +36,15 @@ alias :q='exit'
 alias :wq='sudo shutdown -r now'
 
 #git
-alias git=hub
 alias gti=git
-alias g=git
-alias ga='git add'
-alias gb='git branch'
-alias gp='git push'
-alias gl='git pull'
-alias gs="git status --short"
-alias gd="git diff"
-alias gci="git commit"
-alias gco="git checkout"
-alias gf='git fetch'
-alias gl='git l'
-alias gmu='git fetch origin -v; git fetch upstream -v; git merge upstream/master'
-alias glog="git log --graph --oneline --all"
+alias g=gitsh
+alias fetch='git fetch'
+alias rebase='git rebase'
 
 alias pjson='python -mjson.tool'
-
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias vimrc="#{EDITOR} ~/.vimrc"
 
-ips(){
-  ifconfig | grep 'inet ' | cut -d':' -f2 | cut -d' ' -f1 | tail -n 1
-
-  inet=$(curl http://icanhazip.com/ 2> /dev/null)
-
-  if [ ! -z $inet ]
-  then
-    echo $inet
-  fi
-}
 
 branch(){
   test -d .git && git symbolic-ref HEAD 2> /dev/null | cut -d/ -f3,4
@@ -134,13 +113,8 @@ fi
 export EDITOR=vim
 export JAVA_HOME=/opt/jdk1.7.0_04
 export PATH=/usr/local/pgsql/bin:$PATH
-export PATH=/opt/mongodb/bin:$PATH
+export PATH=/opt/mongo/bin:$PATH
 export PATH=$JAVA_HOME/bin:$PATH
 export PYTHONSTARTUP=$HOME/.pythonrc
 
-[[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
-
-rvm default
-
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
