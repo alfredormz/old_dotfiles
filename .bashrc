@@ -19,6 +19,7 @@ alias irc='weechat-curses'
 alias h='history'
 alias v='vim'
 alias gnome-terminal='gnome-terminal --hide-menubar'
+alias j='jobs'
 
 alias rb='ruby'
 alias irb='irb --simple-prompt --readline'
