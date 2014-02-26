@@ -25,6 +25,7 @@ syntax on
 filetype plugin indent on
 
 " Colors
+set t_Co=256
 color molokai
 
 set nowrap
