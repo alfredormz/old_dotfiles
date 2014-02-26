@@ -96,7 +96,7 @@ nnoremap <silent> <C-p> :CommandT<CR>
 nnoremap <silent> <C-b> :CommandTBuffer<CR>
 let g:CommandTMatchWindowReverse=1
 let g:CommandTMaxHeight=10
-set wildignore+=.git,*.png,*.jpg,*.jpeg,*.log,tmp
+set wildignore+=.git,*.png,*.jpg,*.jpeg,*.log,tmp,*.rdf
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree options
