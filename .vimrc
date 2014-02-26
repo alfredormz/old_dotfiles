@@ -18,6 +18,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'tpope/vim-fugitive'
+Bundle 'scrooloose/syntastic'
 
 let g:gitgutter_realtime = 0
 let g:gitgutter_eager = 0
