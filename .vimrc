@@ -15,6 +15,8 @@ Bundle 'gmarik/vundle'
 Bundle 'wincent/Command-T'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'airblade/vim-gitgutter'
 
 set nocompatible
 set encoding=utf-8
