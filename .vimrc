@@ -134,3 +134,4 @@ map <Down>  :echo "ಠ_ಠ"<cr>
 highlight ColorColumn ctermbg=magenta
 call matchadd('ColorColumn', '\%81v', 100)
 
+map <leader>bp orequire 'pry'; binding.pry <Esc>
