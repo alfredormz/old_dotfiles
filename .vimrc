@@ -49,6 +49,7 @@ set laststatus=2
 set number
 set gdefault " assume the /g flag on :s substitutions to replace all matches in a line
 set clipboard=unnamed
+set winwidth=80 "active vertical split is never less than 80 columns
 
 " Allow backgrounding buffers without writing them, and remember marks/undo
 " for backgrounded buffers
