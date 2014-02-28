@@ -39,11 +39,11 @@ set nowrap
 set tabstop=2 shiftwidth=2
 set expandtab
 set backspace=indent,eol,start
-set ruler
-set showcmd
+"set ruler
+"set showcmd
 set autoindent
 set showmatch
-set viminfo+=!
+"set viminfo+=!
 set history=500
 set laststatus=2
 set number
